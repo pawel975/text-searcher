@@ -1,1 +1,2 @@
-console.log("XD");
+import "./styles.css";
+console.log("XD")
