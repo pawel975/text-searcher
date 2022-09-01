@@ -94,7 +94,7 @@ body {
   color: "blue";
 }
 
-.app__main-content {
+main {
   gap: 1rem;
   display: flex;
   flex-direction: column;

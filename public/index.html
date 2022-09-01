@@ -7,17 +7,25 @@
     <title>Text Searcher</title>
 </head>
 <body>
-    <header class="app__header">
+    <header class="app-header">
         <h1>Text Searcher</h1>
     </header>
-    <main class="app__main-content">
-        <form>
-            <input type="text">
+    <main>
+        <form class="search-form">
+            <input 
+                type="text" 
+                class="search-form__text"
+            >
             <button>Search</button>
         </form>
         <label for="text-to-scan-">Type text to scan</label>
         <!-- Here will be stored text to scan -->
-        <textarea id="text-to-scan" rows="10" cols="20"></textarea>
+        <textarea 
+            id="text-to-scan" 
+            class="text-to-scan" 
+            rows="10" 
+            cols="20"
+        ></textarea>
         
     </main>
 </body>

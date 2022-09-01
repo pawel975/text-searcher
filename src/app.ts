@@ -1,2 +1,8 @@
+import domElements from "./domElements";
 import "./styles.css";
-console.log("XD")
+
+const {searchForm, searchFormText} = domElements;
+
+searchForm.addEventListener("submit", (e: any) => {
+    e.preventDefault();
+})
