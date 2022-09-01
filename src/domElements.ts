@@ -1,7 +1,5 @@
 
-const domElements = {
-    searchForm: <HTMLFormElement>document.getElementsByClassName("search-form"),
-    searchFormText!: document.getElementsByClassName("search-form__text"),
+export const domElements = {
+    searchForm: <HTMLFormElement> document.querySelector(".search-form"),
+    searchFormText: <HTMLInputElement> document.querySelector(".search-form__text"),
 }
-
-export default domElements;
