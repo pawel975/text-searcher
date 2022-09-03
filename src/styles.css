@@ -1,10 +1,14 @@
 :root {
+  --clr-text-very-light: #ffffff;
   --clr-text-light: #2da63c;
   --clr-text-dark: #0e4414;
   --bg-light: #efe7da;
+  --border: #E55812;
+  --border-hover: #4281A4;
   --scroll-track: #e7c7b7;
   --scroll-thumb: #E55812;
   --scroll-hover: #a8420e;
+  --highlightColor: #6ec56d;
 }
 
 /*************/
@@ -48,6 +52,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* A elements that don't have a class get default styles */
@@ -142,6 +147,29 @@ main {
   height: 100%;
 }
 
+.search-form__text {
+  border: 0.2rem solid var(--border);
+}
+
+.search-form__text:focus {
+  outline: none;
+  border: 0.2rem solid var(--border-hover);
+}
+
+.search-form__button {
+  color: var(--clr-text-very-light);
+  background: var(--border);
+  border: 0.2rem solid var(--border);
+}
+
+.search-form__button:hover,
+.search-form__button:focus {
+  outline: none;
+  background: var(--border-hover);
+  border: 0.2rem solid var(--border-hover);
+  height: 100%;
+}
+
 .text-to-scan {
   outline: none;
   padding: 1rem;
@@ -152,9 +180,9 @@ main {
 }
 
 @keyframes scanFieldFocus {
-  0% {border: 0.3rem dashed #E55812}
-  50% {border: 0.3rem dashed #4281A4}
-  100% {border: 0.3rem dashed #E55812}
+  0% {border: 0.3rem dashed var(--border)}
+  50% {border: 0.3rem dashed var(--border-hover)}
+  100% {border: 0.3rem dashed var(--border)}
 }
 
 .text-to-scan:focus {
@@ -163,5 +191,5 @@ main {
 }
 
 .highlighted-text {
-  background-color: yellowgreen;
+  background-color: var(--highlightColor);
 }
