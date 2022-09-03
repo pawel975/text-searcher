@@ -1,5 +1,6 @@
 
 export const domElements = {
     searchForm: <HTMLFormElement> document.querySelector(".search-form"),
-    searchFormText: <HTMLInputElement> document.querySelector(".search-form__text"),
+    searchedText: <HTMLInputElement> document.querySelector(".search-form__text"),
+    textToScanContainer: <HTMLTextAreaElement> document.querySelector(".text-to-scan"),
 }
