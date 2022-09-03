@@ -9,15 +9,22 @@ searchForm.addEventListener("submit", (e) => {
     search();
 })
 
-// console.log(searchForm)
-
 function search() {
+    cleanUpScanField();
     let searched = searchedText.value.trim();
-    console.log(searched);
     if (searched !== "") {
         let text = textToScanContainer.innerHTML;
-        let re = new RegExp(searched,"g"); // search for all instances
+        let re = new RegExp(searched,"g");
         let newText = text.replace(re, `<mark class="highlighted-text">${searched}</mark>`);
         textToScanContainer.innerHTML = newText;
     }
+}
+
+// Cleans up all previous text modifications
+function cleanUpScanField() {
+    let text = textToScanContainer.innerHTML;
+    let startTag = new RegExp(`<mark class="highlighted-text">`,"g");
+    let newText = text.replace(startTag, "");
+    textToScanContainer.innerHTML = newText;
+    
 }

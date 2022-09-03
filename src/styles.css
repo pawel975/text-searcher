@@ -94,6 +94,10 @@ body {
   color: "blue";
 }
 
+label[for=text-to-scan] {
+  font-size: 1.25rem;
+}
+
 main {
   gap: 1rem;
   display: flex;
