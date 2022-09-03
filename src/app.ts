@@ -6,11 +6,11 @@ const {searchForm, searchedText, textToScanContainer} = domElements;
 
 searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    search();
+    searchForPhrase();
 })
 
-function search() {
-    cleanUpScanField();
+function searchForPhrase() {
+    resetHighlights();
     let searched = searchedText.value.trim();
     if (searched !== "") {
         let text = textToScanContainer.innerHTML;
@@ -20,11 +20,11 @@ function search() {
     }
 }
 
-// Cleans up all previous text modifications
-function cleanUpScanField() {
+// Cleans up all highlights from text
+function resetHighlights() {
     let text = textToScanContainer.innerHTML;
-    let startTag = new RegExp(`<mark class="highlighted-text">`,"g");
-    let newText = text.replace(startTag, "");
-    textToScanContainer.innerHTML = newText;
+    let highlightTag = new RegExp(`<mark class="highlighted-text">`,"g");
+    let scannedText = text.replace(highlightTag, "");
+    textToScanContainer.innerHTML = scannedText;
     
 }

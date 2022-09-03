@@ -1,3 +1,11 @@
+:root {
+  --clr-text-light: #2da63c;
+  --clr-text-dark: #0e4414;
+  --bg-light: #efe7da;
+  --scroll-track: #e7c7b7;
+  --scroll-thumb: #E55812;
+  --scroll-hover: #a8420e;
+}
 
 /*************/
 /* CSS Reset */
@@ -78,36 +86,82 @@ select {
   }
 }
 
-/*************/
-/* CSS Reset */
-/*************/
+/*******************/
+/* Custom scroller */
+/******************/
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-hover);
+}
+
+/***************/
+/* App styling */
+/***************/
 
 body {
+  background-color: var(--bg-light);
   padding: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1rem;
 }
 
-.app__header  {
-  margin-inline: auto;
-  color: "blue";
+.app-header  {
+  color: var(--clr-text-dark);
 }
 
 label[for=text-to-scan] {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+  color: var(--clr-text-dark);
+  font-weight: 600;
 }
 
 main {
   gap: 1rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   margin-inline: auto;
   width: 100%;
   height: 100%;
 }
 
+.text-to-scan {
+  outline: none;
+  padding: 1rem;
+  width: 40rem;
+  height: 15rem;
+  overflow-y: scroll;
+  border: 0.3rem dashed #E55812;
+}
+
+@keyframes scanFieldFocus {
+  0% {border: 0.3rem dashed #E55812}
+  50% {border: 0.3rem dashed #4281A4}
+  100% {border: 0.3rem dashed #E55812}
+}
+
+.text-to-scan:focus {
+  animation: 1s scanFieldFocus infinite;
+  transition: 1s;
+}
+
 .highlighted-text {
-  background-color: darkcyan;
+  background-color: yellowgreen;
 }
