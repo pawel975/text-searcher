@@ -9,7 +9,7 @@ searchForm.addEventListener("submit", (e) => {
     searchForPhrase();
 })
 
-function searchForPhrase() {
+function searchForPhrase(rules: string[]) {
     resetHighlights();
     let searched = searchedText.value.trim();
     if (searched !== "") {
