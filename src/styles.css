@@ -8,7 +8,8 @@
   --scroll-track: #e7c7b7;
   --scroll-thumb: #E55812;
   --scroll-hover: #a8420e;
-  --highlightColor: #6ec56d;
+  --highlight-clr: #6ec56d;
+  --choosed-highlight-clr: #3939df;
 }
 
 /*************/
@@ -198,7 +199,12 @@ main {
 }
 
 .highlighted-text {
-  background-color: var(--highlightColor);
+  background-color: var(--highlight-clr);
+}
+
+.choosed-highlighted-text {
+  background-color: var(--choosed-highlight-clr);
+  color: var(--clr-text-very-light);
 }
 
 input[type=checkbox] {
