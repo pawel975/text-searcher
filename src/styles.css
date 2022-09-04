@@ -160,6 +160,7 @@ main {
   color: var(--clr-text-very-light);
   background: var(--border);
   border: 0.2rem solid var(--border);
+  cursor: pointer;
 }
 
 .search-form__button:hover,

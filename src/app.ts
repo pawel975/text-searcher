@@ -6,7 +6,8 @@ const {searchForm, searchedText, textToScanContainer} = domElements;
 
 searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    searchForPhrase();
+    // create rules modification TODO
+    searchForPhrase(["caseSensitive"]);
 })
 
 function searchForPhrase(rules: string[]) {
