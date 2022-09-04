@@ -31,9 +31,9 @@ function searchForPhrase() {
 
 // Cleans up all highlights from text
 function resetHighlights() {
-    let text = textToScanContainer.innerHTML;
+    let text: string = textToScanContainer.innerHTML;
     let highlightTag = new RegExp(`<mark class="highlighted-text">`,"g");
-    let scannedText = text.replace(highlightTag, "");
+    let scannedText: string = text.replace(highlightTag, "");
     textToScanContainer.innerHTML = scannedText;
     
 }
