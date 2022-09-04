@@ -22,16 +22,11 @@ function searchForPhrase() {
     if (searched !== "") {
 
         let text: string = textToScanContainer.innerHTML;
-        const originalText = text;
-
         let re = new RegExp(searched, searchFlags);
 
-        text.match(re)
         let newText: string = text.replace
         (re, (match) => (`<mark class="highlighted-text">${match}</mark>`));
         textToScanContainer.innerHTML = newText;
-
-        console.log(re);
     }
 }
 
