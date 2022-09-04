@@ -200,3 +200,11 @@ main {
 .highlighted-text {
   background-color: var(--highlightColor);
 }
+
+input[type=checkbox] {
+  width: 1.5rem;
+}
+
+input[type=checkbox]:checked {
+  accent-color: var(--border-hover);
+}
