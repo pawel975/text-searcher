@@ -2,7 +2,7 @@
 import { domElements } from "./domElements";
 import "./styles.css";
 
-const {searchForm, searchedText, textToScanContainer, ignoreCaseFlag} = domElements;
+const {searchForm, searchedText, textToScanContainer, ignoreCaseFlag, globalSearchFlag} = domElements;
 
 searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -13,9 +13,10 @@ function searchForPhrase() {
 
     resetHighlights();
 
-    let searchFlags: string = "g";
+    let searchFlags: string = "";
 
     if (ignoreCaseFlag.checked) searchFlags += "i";
+    if (globalSearchFlag.checked) searchFlags += "g";
 
     let searched: string = searchedText.value.trim();
 
