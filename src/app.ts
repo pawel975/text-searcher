@@ -2,22 +2,36 @@
 import { domElements } from "./domElements";
 import "./styles.css";
 
-const {searchForm, searchedText, textToScanContainer} = domElements;
+const {searchForm, searchedText, textToScanContainer, ignoreCaseFlag} = domElements;
 
 searchForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    // create rules modification TODO
-    searchForPhrase(["caseSensitive"]);
+    searchForPhrase();
 })
 
-function searchForPhrase(rules: string[]) {
+function searchForPhrase() {
+
     resetHighlights();
-    let searched = searchedText.value.trim();
+
+    let searchFlags: string = "g";
+
+    if (ignoreCaseFlag.checked) searchFlags += "i";
+
+    let searched: string = searchedText.value.trim();
+
     if (searched !== "") {
-        let text = textToScanContainer.innerHTML;
-        let re = new RegExp(searched,"g");
-        let newText = text.replace(re, `<mark class="highlighted-text">${searched}</mark>`);
+
+        let text: string = textToScanContainer.innerHTML;
+        const originalText = text;
+
+        let re = new RegExp(searched, searchFlags);
+
+        text.match(re)
+        let newText: string = text.replace
+        (re, (match) => (`<mark class="highlighted-text">${match}</mark>`));
         textToScanContainer.innerHTML = newText;
+
+        console.log(re);
     }
 }
 
