@@ -13,18 +13,16 @@ function searchForPhrase() {
 
     resetHighlights();
 
+    // Include regex flags
     let searchFlags: string = "";
-
     if (ignoreCaseFlag.checked) searchFlags += "i";
     if (globalSearchFlag.checked) searchFlags += "g";
 
     let searched: string = searchedText.value.trim();
-
     if (searched !== "") {
 
         let text: string = textToScanContainer.innerHTML;
         let re = new RegExp(searched, searchFlags);
-
         let newText: string = text.replace
         (re, (match) => (`<mark class="highlighted-text">${match}</mark>`));
         textToScanContainer.innerHTML = newText;
