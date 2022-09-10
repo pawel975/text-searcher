@@ -14,13 +14,13 @@ searchForm.addEventListener("submit", (e) => {
 
 resultChooserPrevMatchBtn.addEventListener("click", () => {
     if (choosedMatchIndex > 0) choosedMatchIndex--;
-    resultChooserMatchesCount.textContent = `${choosedMatchIndex}/${matchIndex}`;
+    resultChooserMatchesCount.textContent = `${choosedMatchIndex+1}/${matchIndex}`;
     chooseHighlight();
 })
 
 resultChooserNextMatchBtn.addEventListener("click", () => {
-    if (choosedMatchIndex < matchIndex) choosedMatchIndex++;
-    resultChooserMatchesCount.textContent = `${choosedMatchIndex}/${matchIndex}`;
+    if (choosedMatchIndex < matchIndex - 1) choosedMatchIndex++;
+    resultChooserMatchesCount.textContent = `${choosedMatchIndex+1}/${matchIndex}`;
     chooseHighlight();
 })
 
@@ -49,7 +49,7 @@ function searchForPhrase() {
         });
 
         textToScanContainer.innerHTML = newText;
-        resultChooserMatchesCount.textContent = `${choosedMatchIndex}/${matchIndex}`;
+        resultChooserMatchesCount.textContent = `${choosedMatchIndex+1}/${matchIndex}`;
 
     }
 
