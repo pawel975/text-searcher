@@ -8,4 +8,5 @@ export const domElements = {
     resultChooserPrevMatchBtn: <HTMLButtonElement> document.querySelector(".result-chooser__prev"),
     resultChooserNextMatchBtn: <HTMLButtonElement> document.querySelector(".result-chooser__next"),
     resultChooserMatchesCount: <HTMLButtonElement> document.querySelector(".result-chooser__matches-count"),
+    resultChooser: <HTMLDivElement> document.querySelector(".result-chooser"),
 }

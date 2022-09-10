@@ -2,7 +2,7 @@
 import { domElements } from "./domElements";
 import "./styles.css";
 
-const {searchForm, searchedText, textToScanContainer, ignoreCaseFlag, globalSearchFlag, resultChooserMatchesCount, resultChooserNextMatchBtn, resultChooserPrevMatchBtn} = domElements;
+const {searchForm, searchedText, textToScanContainer, ignoreCaseFlag, globalSearchFlag, resultChooserMatchesCount, resultChooserNextMatchBtn, resultChooserPrevMatchBtn, resultChooser} = domElements;
 
 let matchIndex: number = 0;
 let choosedMatchIndex: number = 0;
@@ -26,8 +26,10 @@ resultChooserNextMatchBtn.addEventListener("click", () => {
 
 function searchForPhrase() {
 
+    // Reseting settings
     resetHighlights();
     matchIndex = 0;
+    resultChooser.classList.remove("visible");
 
     // Include regex flags
     let searchFlags: string = "";
@@ -52,6 +54,9 @@ function searchForPhrase() {
         resultChooserMatchesCount.textContent = `${choosedMatchIndex+1}/${matchIndex}`;
 
     }
+
+    // Showing results switch
+    resultChooser.classList.add("visible");
 
     chooseHighlight();
 }

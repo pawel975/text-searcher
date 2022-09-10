@@ -220,6 +220,10 @@ input[type=checkbox]:checked {
   background-color: var(--clr-text-very-light);
 }
 
+.visible {
+  visibility: visible;
+}
+
 .result-chooser button {
   outline: none;
   border: none;
