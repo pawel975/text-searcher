@@ -214,3 +214,20 @@ input[type=checkbox] {
 input[type=checkbox]:checked {
   accent-color: var(--border-hover);
 }
+
+.result-chooser {
+  visibility: hidden;
+  background-color: var(--clr-text-very-light);
+}
+
+.result-chooser button {
+  outline: none;
+  border: none;
+  background-color: var(--scroll-thumb);
+  color: var(--clr-text-very-light);
+}
+
+.result-chooser button:hover,
+.result-chooser button:focus {
+  background-color: var(--border-hover);
+}
