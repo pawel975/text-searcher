@@ -59,6 +59,15 @@ function searchForPhrase() {
     resultChooser.classList.add("visible");
 
     chooseHighlight();
+
+    // Sending to server
+    fetch("http://127.0.0.1:8888/todos", {
+        method: "POST",
+        body: JSON.stringify({name:"aa"}),
+        headers: {
+            "Content-type": "application/json",
+        }
+    })
 }
 
 // Cleans up all highlights from text
